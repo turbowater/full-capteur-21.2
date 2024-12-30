@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session de Mesure</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Session de Mesure</h1>
+
+    <!-- Tableau A (Mesures Instantanées) -->
+    <h2>Mesures Instantanées</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Angle X (°)</th>
+                <th>Altitude (m)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="angleX">0</td>
+                <td id="altitude">Non disponible</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+<!-- Tableau pour entrer les valeurs personnalisées -->
+<div>
+    <h2>Définir la Plage d'Angle</h2>
+    <table id="angle-range-table">
+      <tr>
+        <td>Angle Min (°):</td>
+        <td><input type="number" id="angle-min" value="-30" step="1"></td>
+      </tr>
+      <tr>
+        <td>Angle Max (°):</td>
+        <td><input type="number" id="angle-max" value="30" step="1"></td>
+      </tr>
+    </table>
+
+        <!-- Bouton VALIDER -->
+        <button id="validate-angle-range">Valider</button>
+
+        <!-- Bouton RESET -->
+        <button id="reset-button">Reset</button>
+
+        <!-- Bouton Download -->
+        <button id="download-button">Download</button>
+    <br>
+    <br>
+  </div>
+  
+    
+    <!-- Fenêtre modale pour choisir les données à télécharger et renommer le fichier -->
+    <div id="modal" style="display:none;">
+        <div id="modal-content">
+            <h2>Choisissez les données à télécharger</h2>
+            <label for="data-choice">Données :</label>
+            <select id="data-choice">
+                <option value="tableauB">Résumé de la Session</option>
+                <option value="tableauC">Session Précédente</option>
+            </select>
+            <br>
+            <label for="filename">Renommer le fichier :</label>
+            <input type="text" id="filename" placeholder="Nom du fichier">
+            <br>
+            <button id="confirm-download">Télécharger</button>
+            <button id="cancel-download">Annuler</button>
+        </div>
+    </div>
+
+
+    <!-- Tableau B (Résumé de la Session) -->
+    <h2>Résumé de la Session</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th>Valeur</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Date et Heure</td><td id="date-time">Non disponible</td></tr>
+            <tr><td>Angle X Max (°)</td><td id="angleX-max">0</td></tr>
+            <tr><td>Angle X Min (°)</td><td id="angleX-min">0</td></tr>
+            <tr><td>Sorties de Plage (-30° à +30°)</td><td id="sorties-plage">0</td></tr>
+            <tr><td>Durée Hors Plage</td><td id="duree-hors-plage">00:00:00</td></tr>
+            <tr><td>Variomètre Max (m/s)</td><td id="vario-max">Non disponible</td></tr>
+            <tr><td>Variomètre Min (m/s)</td><td id="vario-min">Non disponible</td></tr>
+            <tr><td>Chocs</td><td id="chocs">0</td></tr>
+            <tr><td>Force chocs</td><td id="force-chocs">0</td></tr>
+            <tr><td>Rotations</td><td id="totalRotations">0</td></tr>
+        </tbody>
+    </table>
+
+    <!-- Tableau C (Session Précédente) -->
+    <h2>Résumé de la Session Précédente</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th>Valeur</th>
+            </tr>
+        </thead>
+        <tbody id="prev-session-body">
+            <tr><td colspan="2">Pas de données</td></tr>
+        </tbody>
+    </table>
+
+
+
+    <script src="script.js"></script>
+
+
+        <!-- Ajouter 10 sauts de ligne -->
+        <br><br><br><br><br><br><br><br><br><br>
+
+
+</body>
+</html>

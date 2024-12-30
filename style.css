@@ -1,0 +1,143 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f7f7f7;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6; /* Amélioration de la lisibilité */
+}
+
+h1, h2 {
+    background-color: #007BFF;
+    color: white;
+    padding: 15px; /* Légère augmentation du padding pour un meilleur espacement */
+    margin: 0; /* Suppression des marges par défaut */
+    border-radius: 5px; /* Ajout pour arrondir légèrement les bords */
+}
+
+table {
+    width: 90%; /* Augmenté pour mieux remplir l'écran */
+    margin: 20px auto;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 15px; /* Augmenté pour un meilleur espacement */
+    text-align: center;
+    font-size: 1rem; /* Uniformisation de la taille de police */
+}
+
+th {
+    background-color: #007BFF;
+    color: white;
+    text-transform: uppercase; /* Titres en majuscules */
+}
+
+td {
+    background-color: #f9f9f9; /* Fond légèrement différent */
+}
+
+td:nth-child(even) {
+    background-color: #f0f0f0; /* Alternance de couleur pour les lignes */
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #FF5733;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem; /* Uniformisation de la taille de police */
+    border-radius: 5px; /* Arrondi des bords */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Animation au survol */
+}
+
+button:hover {
+    background-color: #e74c3c;
+    transform: scale(1.05); /* Mise en avant au survol */
+}
+
+#modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Assurez-vous que la modale soit au-dessus du contenu */
+}
+
+#modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    max-width: 90%;
+    text-align: left;
+}
+
+#modal-content h2 {
+    margin-top: 0;
+    font-size: 1.2rem;
+}
+
+label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type="text"], select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button#confirm-download {
+    background-color: #28a745;
+}
+
+button#confirm-download:hover {
+    background-color: #218838;
+}
+
+button#cancel-download {
+    background-color: #6c757d;
+}
+
+button#cancel-download:hover {
+    background-color: #5a6268;
+}
+
+/* Adaptation pour les petits écrans */
+@media (max-width: 600px) {
+    table {
+        width: 100%; /* Adapte la table à la largeur de l'écran */
+    }
+
+    th, td {
+        font-size: 0.9rem; /* Réduction de la taille de police sur les petits écrans */
+        padding: 10px; /* Réduction de l'espacement */
+    }
+
+    button {
+        width: 90%; /* Adaptation des boutons */
+    }
+
+    #modal-content {
+        width: 90%; /* Adapte la modale à la taille de l'écran */
+    }
+}
